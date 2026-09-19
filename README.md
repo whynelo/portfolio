@@ -33,7 +33,7 @@ Im Dashboard: **Workers & Pages → Create → Pages → Connect to Git** → Re
 | Root directory | `/` (leer lassen / Repo-Root) |
 | Build command | `npm run build` |
 | Build output directory | `dist` |
-| Environment variable | `NODE_VERSION` = `22` |
+| Environment variable | `NODE_VERSION` = `22.19.0` (wichtig: Astro 7 braucht ≥22.12) |
 
 Node 22 steht auch in `.nvmrc`. Formular: auf Pages kein Netlify Forms — Fallback `mailto:` an die Adresse in `src/data/brand.ts`.
 
