@@ -1,0 +1,42 @@
+---
+import Base from '../layouts/Base.astro';
+import PageIntro from '../components/PageIntro.astro';
+import CasePlate from '../components/CasePlate.astro';
+import { cases, laterClientSlots, deferredCaseSlot } from '../data/cases';
+import { work } from '../data/content';
+import { pageMeta } from '../data/content';
+---
+
+<Base title={pageMeta.arbeit.title} description={pageMeta.arbeit.description}>
+  <PageIntro kicker={work.label} title={work.title} lead={work.lead} aside={work.meta} titleId="arbeit-title" />
+
+  <section class="mx-auto max-w-6xl px-[1.15rem] pb-[5rem] md:px-[1.5rem]">
+    <div class="flex flex-col gap-8">
+      {cases.map((item) => <CasePlate item={item} />)}
+    </div>
+  </section>
+
+  <section class="hairline py-[5rem]" aria-labelledby="later-title">
+    <div class="page-grid mb-8">
+      <div>
+        <p class="label mb-3">{work.label}</p>
+        <h2 id="later-title" class="display h2 m-0">{deferredCaseSlot.heading}</h2>
+        <p class="body measure mt-4 text-ink-muted">{deferredCaseSlot.body}</p>
+      </div>
+      <p class="label md:pt-8">{work.laterAside}</p>
+    </div>
+    <div class="page-grid">
+      <ul class="m-0 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-3">
+        {
+          laterClientSlots.map((slot) => (
+            <li class="plate slot-empty">
+              <span class="small text-ink">{slot.title}</span>
+              <span class="label">{slot.state}</span>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="small text-ink-muted md:pt-2">Keine Attrappen.</p>
+    </div>
+  </section>
+</Base>

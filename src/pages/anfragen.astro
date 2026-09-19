@@ -1,0 +1,15 @@
+---
+import Base from '../layouts/Base.astro';
+import PageIntro from '../components/PageIntro.astro';
+import Onboarding from '../components/Onboarding.astro';
+import Faq from '../components/Faq.astro';
+import { onboard, pageMeta } from '../data/content';
+---
+
+<Base title={pageMeta.anfragen.title} description={pageMeta.anfragen.description}>
+  <div class="board">
+    <PageIntro kicker={onboard.label} title={onboard.title} lead={onboard.lead} aside={onboard.aside} titleId="start-title" />
+    <Onboarding />
+  </div>
+  <Faq />
+</Base>

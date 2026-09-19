@@ -1,0 +1,34 @@
+---
+import Still from './Still.astro';
+import type { Case } from '../data/cases';
+
+type Props = {
+  item: Case;
+};
+
+const { item } = Astro.props;
+---
+
+<article id={item.id} class="plate case-plate">
+  <Still src={item.still.src} alt={item.still.alt} lqip={item.still.lqip} kind={item.still.kind} />
+  <div class="case-copy">
+    <p class="label m-0">{item.index} · {item.kind}</p>
+    <h2 class="display h2 m-0 mt-2">{item.name}</h2>
+    <p class="body measure mt-4 m-0 text-ink-muted">{item.summary}</p>
+    <p class="body measure mt-3 m-0">{item.detail}</p>
+    {
+      item.note && <p class="small measure mt-3 m-0 text-ink-muted">{item.note}</p>
+    }
+    <p class="mt-6 m-0">
+      {
+        item.href ? (
+          <a class="btn-primary" href={item.href} rel="noopener noreferrer" target="_blank">
+            <span>{item.hrefLabel}</span>
+          </a>
+        ) : (
+          <span class="small text-ink-muted">{item.hrefLabel}</span>
+        )
+      }
+    </p>
+  </div>
+</article>

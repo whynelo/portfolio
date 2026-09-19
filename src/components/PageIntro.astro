@@ -1,0 +1,22 @@
+---
+type Props = {
+  kicker: string;
+  title: string;
+  lead: string;
+  aside?: string;
+  titleId?: string;
+};
+
+const { kicker, title, lead, aside, titleId } = Astro.props;
+---
+
+<header class="page-intro">
+  <div class="page-grid">
+    <div>
+      <p class="label mb-4">{kicker}</p>
+      <h1 id={titleId} class="display page-title m-0">{title}</h1>
+      <p class="body measure mt-5 text-ink-muted">{lead}</p>
+    </div>
+    {aside && <p class="label md:pt-10">{aside}</p>}
+  </div>
+</header>

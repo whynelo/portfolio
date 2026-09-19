@@ -1,0 +1,44 @@
+---
+import { brand } from '../data/brand';
+import { primaryNav, currentPath } from '../data/nav';
+import { routes } from '../data/nav';
+
+const path = currentPath(Astro.url.pathname);
+---
+
+<header data-header class="header-bar">
+  <div class="page-grid items-center py-3">
+    <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between md:gap-6">
+      <a href={routes.home} class="display text-[1.05rem] tracking-tight text-ink no-underline">
+        {brand.displayName}
+      </a>
+      <nav class="flex flex-wrap items-center gap-x-4 gap-y-1" aria-label="Seiten">
+        {
+          primaryNav.map((item) => (
+            <a
+              class:list={['nav-link small', path === item.href && 'is-on']}
+              href={item.href}
+              aria-current={path === item.href ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </nav>
+    </div>
+    <div class="hidden justify-end md:flex">
+      <a class="btn-primary" href={routes.anfragen}>{brand.cta}</a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.querySelector('[data-header]');
+  if (header instanceof HTMLElement) {
+    const onScroll = () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 16);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
+</script>

@@ -1,0 +1,27 @@
+---
+import { proof } from '../data/content';
+---
+
+<section id="nachweise" class="py-[5rem]" aria-labelledby="nachweise-title">
+  <div class="page-grid mb-8">
+    <div>
+      <p class="label mb-3">{proof.label}</p>
+      <h2 id="nachweise-title" class="display h2 m-0">{proof.title}</h2>
+      <p class="body measure mt-4 text-ink-muted">{proof.body}</p>
+    </div>
+    <p class="label md:pt-8">{proof.aside}</p>
+  </div>
+  <div class="page-grid">
+    <ul class="m-0 grid list-none grid-cols-1 gap-3 p-0 sm:grid-cols-3">
+      {
+        proof.slots.map((slot) => (
+          <li class="plate slot-empty">
+            <span class="small text-ink">{slot.title}</span>
+            <span class="label">{slot.state}</span>
+          </li>
+        ))
+      }
+    </ul>
+    <p class="small text-ink-muted md:pt-2">Keine Fake-Logos.</p>
+  </div>
+</section>

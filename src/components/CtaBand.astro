@@ -1,0 +1,21 @@
+---
+import { brand } from '../data/brand';
+import { ctaBand } from '../data/content';
+import { routes } from '../data/nav';
+---
+
+<section class="board py-[7.5rem]" aria-labelledby="cta-band-title">
+  <div class="page-grid items-center">
+    <div>
+      <p class="label mb-3">{ctaBand.label}</p>
+      <h2 id="cta-band-title" class="display h2 m-0">{ctaBand.title}</h2>
+      <p class="body measure mt-4 text-ink-muted">{ctaBand.lead}</p>
+      <p class="mt-8 m-0">
+        <a class="btn-primary" href={routes.anfragen}>
+          <span>{brand.cta}</span>
+        </a>
+      </p>
+    </div>
+    <p class="label md:pt-8">{ctaBand.aside}</p>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+---
+import { method } from '../data/content';
+---
+
+<section id="methode" class="py-[5rem]" aria-label="Sieben Schritte">
+  <div class="process relative mx-auto max-w-6xl px-[1.5rem]">
+    <span class="process-rail" aria-hidden="true">
+      <span class="process-fill"></span>
+    </span>
+    <ol class="relative m-0 list-none p-0">
+      {
+        method.steps.map((step) => (
+          <li class="method-step">
+            <span class="step-num" aria-hidden="true">
+              {step.n}
+            </span>
+            <div class="step-copy">
+              <p class="m-0 flex flex-wrap items-center gap-2">
+                <span class="display h3">{step.title}</span>
+                <span class="tag">{step.tag}</span>
+              </p>
+              <p class="body measure mt-3 m-0">{step.craft}</p>
+              <p class="small measure mt-2 m-0 text-ink-muted">{step.body}</p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>

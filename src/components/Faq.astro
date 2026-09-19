@@ -1,0 +1,26 @@
+---
+import { faq } from '../data/content';
+---
+
+<section id="fragen" class="py-[6.5rem]" aria-labelledby="faq-title">
+  <div class="page-grid">
+    <div>
+      <p class="label mb-3">{faq.label}</p>
+      <h2 id="faq-title" class="display h2 m-0">{faq.title}</h2>
+      <div class="mt-8 flex flex-col gap-3">
+        {
+          faq.items.map((item) => (
+            <details class="faq-item plate">
+              <summary>
+                <span class="h3 display">{item.q}</span>
+                <span class="chev" aria-hidden="true"></span>
+              </summary>
+              <p class="faq-a body m-0">{item.a}</p>
+            </details>
+          ))
+        }
+      </div>
+    </div>
+    <p class="label md:pt-8">{faq.aside}</p>
+  </div>
+</section>

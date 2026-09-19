@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+import PageIntro from '../components/PageIntro.astro';
+import ProofSlot from '../components/ProofSlot.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { about, pageMeta } from '../data/content';
+import { routes } from '../data/nav';
+---
+
+<Base title={pageMeta.ueber.title} description={pageMeta.ueber.description}>
+  <PageIntro kicker={about.kicker} title={about.title} lead={about.lead} aside={about.aside} titleId="about-title" />
+
+  <section class="pb-[5rem]" aria-labelledby="about-pov">
+    <div class="page-grid">
+      <div class="flex flex-col gap-5">
+        {
+          about.blocks.map((block) => (
+            <p class="body measure m-0">{block}</p>
+          ))
+        }
+        <p class="mt-2 m-0 flex flex-wrap gap-x-6 gap-y-2">
+          <a class="btn-ghost-text small" href={routes.arbeit}>Zu meinen Sites</a>
+          <a class="btn-ghost-text small" href={routes.methode}>So bau ich</a>
+        </p>
+      </div>
+      <aside class="md:pt-1">
+        <p class="label" id="about-pov">{about.povLabel}</p>
+        <p class="small mt-3 max-w-[28ch] text-ink-muted">{about.pov}</p>
+      </aside>
+    </div>
+  </section>
+
+  <ProofSlot />
+  <CtaBand />
+</Base>

@@ -1,0 +1,11 @@
+---
+import OnboardForm from '../islands/OnboardForm';
+import { brand } from '../data/brand';
+import { onboard } from '../data/content';
+---
+
+<section id="start" class="pb-[6rem]" aria-label={onboard.title}>
+  <div class="mx-auto max-w-[40rem] px-[1.15rem] md:px-[1.5rem]">
+    <OnboardForm client:visible email={brand.email} formName={brand.formName} copy={onboard} />
+  </div>
+</section>

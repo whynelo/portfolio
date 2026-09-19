@@ -1,0 +1,16 @@
+---
+import { brand } from '../data/brand';
+import { routes, currentPath } from '../data/nav';
+
+const onBoard = currentPath(Astro.url.pathname) === routes.anfragen;
+---
+
+{
+  !onBoard && (
+    <div class="sticky-cta md:hidden">
+      <a class="btn-primary" href={routes.anfragen}>
+        <span>{brand.cta}</span>
+      </a>
+    </div>
+  )
+}

@@ -1,0 +1,92 @@
+---
+import Base from '../layouts/Base.astro';
+import { brand } from '../data/brand';
+---
+
+<Base
+  title="Datenschutz — Klaas Leeck"
+  description="Datenschutzerklärung für das Portfolio von Klaas Leeck. Stack: Astro, lokale Fonts, Netlify oder Cloudflare Pages."
+>
+  <article class="page-grid py-[6rem]">
+    <div class="measure">
+      <p class="label mb-3">Rechtliches</p>
+      <h1 class="display h1">Datenschutz</h1>
+      <p class="body mt-6 text-ink-muted">
+        Diese Erklärung beschreibt den <strong>tatsächlichen</strong> Stack dieser statischen Site. Keine Tracker
+        aufführen, die nicht existieren. Kein Rechtsrat. Stand: September 2026.
+      </p>
+
+      <h2 class="display h3 mt-10">1. Verantwortlicher</h2>
+      <p class="body mt-3">
+        {brand.legalName}<br />
+        E-Mail: <a class="btn-ghost-text" href={`mailto:${brand.email}`}>{brand.email}</a><br />
+        Anschrift: <em>siehe Impressum (Platzhalter, bis NAP vollständig ist)</em>
+      </p>
+
+      <h2 class="display h3 mt-10">2. Hosting</h2>
+      <p class="body mt-3">
+        Die Site wird als statisches <code>dist</code> ausgeliefert. Mögliche Hosts in v1:
+      </p>
+      <ul class="body mt-3 list-disc pl-5">
+        <li>Cloudflare Pages (Cloudflare, Inc., USA)</li>
+        <li>Netlify (Netlify, Inc., USA)</li>
+      </ul>
+      <p class="body mt-3 text-ink-muted">
+        Server-Logs (IP, User-Agent, Zeitpunkt) liegen beim jeweiligen Host, üblich kurzfristig. Übermittlung in die
+        USA kann stattfinden. Grundlage und AV-/SCC-Dokumente: <em>Platzhalter — Anwalt prüfen</em>.
+      </p>
+
+      <h2 class="display h3 mt-10">3. Kontakt / Onboarding</h2>
+      <p class="body mt-3">
+        Auf <a class="btn-ghost-text" href="/anfragen">/anfragen</a> gibt es einen vierstufigen Onboarding-Lauf (Name,
+        Rolle, Bedarf, Umfang, E-Mail, optionale Notiz, Einwilligung). Pflicht ist die Checkbox mit Verweis auf diese
+        Seite. Honeypot-Feld gegen Spam, Längenlimits.
+      </p>
+      <ul class="body mt-3 list-disc pl-5">
+        <li>
+          <strong>Netlify:</strong> liegt die Site auf Netlify, verarbeitet <em>Netlify Forms</em> die Einsendung
+          (Zweck: Anfrage beantworten).
+        </li>
+        <li>
+          <strong>Sonst:</strong> das Formular öffnet eine Mail an {brand.email} über dein E-Mail-Programm
+          (<code>mailto:</code>). Dann findet die Übermittlung zwischen dir und deinem Mailanbieter statt, nicht über
+          einen Form-SaaS.
+        </li>
+      </ul>
+      <p class="body mt-3 text-ink-muted">
+        Rechtsgrundlage: Einwilligung, Art. 6 Abs. 1 lit. a DSGVO. Widerruf per Mail an die Adresse oben. Speicherdauer:
+        <em>Platzhalter — solange die Anfrage bearbeitet wird, Anwalt prüfen</em>.
+      </p>
+
+      <h2 class="display h3 mt-10">4. Fonts</h2>
+      <p class="body mt-3">
+        Syne Variable, Outfit und IBM Plex Mono liegen lokal (woff2, Fontsource im Build). Kein Aufruf von
+        fonts.googleapis.com oder fonts.gstatic.com.
+      </p>
+
+      <h2 class="display h3 mt-10">5. Cookies, Analytics, Dritte</h2>
+      <p class="body mt-3">
+        Keine nicht-essentiellen Cookies, kein Google Analytics, kein Tag-Manager, keine Karten, kein YouTube, kein
+        Chat, keine Zahlungsanbieter, keine Auth. Deshalb kein Cookie-Banner in v1.
+      </p>
+
+      <h2 class="display h3 mt-10">6. KI-Kennzeichnung</h2>
+      <p class="body mt-3">
+        Die Site ist eine Broschüre (Typ A). Sie ist kein generatives KI-System. Art. 50 EU-KI-VO greift hier nicht —
+        kein „mit KI gebaut“-Badge.
+      </p>
+
+      <h2 class="display h3 mt-10">7. Deine Rechte</h2>
+      <p class="body mt-3">
+        Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit, Widerspruch, Beschwerde bei einer
+        Aufsichtsbehörde. Kontakt: {brand.email}.
+      </p>
+    </div>
+    <aside>
+      <p class="label">Stack v1</p>
+      <p class="small mt-3 text-ink-muted">
+        Astro · Tailwind · lokale Fonts · Netlify Forms oder mailto · Cloudflare Pages oder Netlify
+      </p>
+    </aside>
+  </article>
+</Base>

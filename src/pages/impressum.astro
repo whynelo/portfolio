@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+import { brand, addressLines, isPlaceholder } from '../data/brand';
+---
+
+<Base title="Impressum — Klaas Leeck" description="Impressum nach § 5 DDG für die Website von Klaas Leeck.">
+  <article class="page-grid py-[6rem]">
+    <div class="measure">
+      <p class="label mb-3">Rechtliches</p>
+      <h1 class="display h1">Impressum</h1>
+      <p class="body mt-6 text-ink-muted">
+        Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz). Nicht TMG. Lücken sind als Platzhalter markiert — kein
+        Rechtsrat.
+      </p>
+
+      <h2 class="display h3 mt-10">Diensteanbieter</h2>
+      <p class="body mt-3">
+        {brand.legalName}<br />
+        {
+          addressLines().map((line) => (
+            <>
+              {isPlaceholder(line) ? <em>{line}</em> : line}
+              <br />
+            </>
+          ))
+        }
+      </p>
+
+      <h2 class="display h3 mt-10">Kontakt</h2>
+      <p class="body mt-3">
+        E-Mail: <a class="btn-ghost-text" href={`mailto:${brand.email}`}>{brand.email}</a><br />
+        Telefon: <em>{brand.phone}</em>
+      </p>
+
+      <h2 class="display h3 mt-10">Register und USt-IdNr.</h2>
+      <p class="body mt-3 text-ink-muted">
+        Handelsregister / HRB: <em>Platzhalter — Anwalt prüfen</em> (nicht erfunden).<br />
+        USt-IdNr.: <em>Platzhalter — Anwalt prüfen</em>.
+      </p>
+
+      <h2 class="display h3 mt-10">Verantwortlich für den Inhalt</h2>
+      <p class="body mt-3">
+        {brand.legalName}, Anschrift wie oben.
+      </p>
+      <p class="body mt-3 text-ink-muted">
+        Der Diensteanbieter ist 16 Jahre alt. Gesetzliche Vertretung / Erziehungsberechtigte und vollständige NAP sind
+        <em>Platzhalter — nicht erfunden, Anwalt bzw. Erziehungsberechtigte prüfen</em>. Kein HRB erfunden.
+      </p>
+
+      <h2 class="display h3 mt-10">EU-Streitschlichtung</h2>
+      <p class="body mt-3 text-ink-muted">
+        Die EU-ODR-Plattform ist abgeschaltet. Deshalb kein Link. Bereitschaft zur Teilnahme an
+        Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle: <em>Platzhalter — Anwalt prüfen</em>.
+      </p>
+    </div>
+    <aside>
+      <p class="label">§ 5 DDG</p>
+      <p class="small mt-3 text-ink-muted">Dieselbe Anschrift wie im Footer.</p>
+    </aside>
+  </article>
+</Base>

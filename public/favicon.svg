@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Klaas Leeck">
+  <rect width="32" height="32" rx="8" fill="#141210"/>
+  <path fill="#FF471A" d="M16 6c-5.2 1.2-8 6.4-8 12.2c0 4.4 2.4 8.2 8 9.8c5.6-1.6 8-5.4 8-9.8C24 12.4 21.2 7.2 16 6z"/>
+  <circle cx="13.2" cy="15.2" r="1.7" fill="#F7F0E8"/>
+  <circle cx="18.8" cy="15.2" r="1.7" fill="#F7F0E8"/>
+  <circle cx="13.6" cy="15.5" r=".7" fill="#140E0C"/>
+  <circle cx="19.2" cy="15.5" r=".7" fill="#140E0C"/>
+</svg>

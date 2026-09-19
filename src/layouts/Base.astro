@@ -1,0 +1,63 @@
+---
+import '../styles/global.css';
+import { brand } from '../data/brand';
+import { meta } from '../data/content';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import StickyCta from '../components/StickyCta.astro';
+
+type Props = {
+  title?: string;
+  description?: string;
+};
+
+const { title = meta.title, description = meta.description } = Astro.props;
+const canonical = brand.siteUrl ? new URL(Astro.url.pathname, brand.siteUrl).toString() : undefined;
+const personJson = JSON.stringify({
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: brand.legalName,
+  email: brand.email,
+  jobTitle: brand.role,
+  url: canonical || undefined,
+  areaServed: brand.serviceArea,
+});
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#141210" />
+    <meta name="color-scheme" content="dark" />
+    {canonical && <link rel="canonical" href={canonical} />}
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={personJson} />
+  </head>
+  <body class="sticky-pad font-sans text-ink antialiased">
+    <div class="grain" aria-hidden="true"></div>
+    <div class="progress-rule" aria-hidden="true"></div>
+    <a class="skip" href="#inhalt">Zum Inhalt</a>
+    <Header />
+    <main id="inhalt">
+      <slot />
+    </main>
+    <Footer />
+    <StickyCta />
+    <script>
+      document.querySelectorAll<HTMLImageElement>('[data-blurup]').forEach((img) => {
+        const on = () => img.classList.add('is-on');
+        if (img.complete && img.naturalWidth > 0) on();
+        else img.addEventListener('load', on, { once: true });
+      });
+    </script>
+  </body>
+</html>

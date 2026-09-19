@@ -1,0 +1,38 @@
+---
+import Still from './Still.astro';
+import { cases } from '../data/cases';
+import { work } from '../data/content';
+import { routes } from '../data/nav';
+---
+
+<section class="py-[6.5rem]" aria-labelledby="tease-title">
+  <div class="page-grid mb-10">
+    <div>
+      <p class="label mb-3">{work.label}</p>
+      <h2 id="tease-title" class="display h2 m-0">{work.title}</h2>
+      <p class="body measure mt-4 text-ink-muted">{work.homeLead}</p>
+    </div>
+    <p class="label md:pt-8">{work.homeAside}</p>
+  </div>
+
+  <ul class="tease-grid mx-auto m-0 max-w-6xl list-none px-[1.15rem] md:px-[1.5rem]">
+    {
+      cases.map((item) => (
+        <li>
+          <a class="plate tease-card" href={`${routes.arbeit}#${item.id}`}>
+            <Still src={item.still.src} alt={item.still.alt} lqip={item.still.lqip} kind={item.still.kind} />
+            <div class="px-5 py-4">
+              <p class="label m-0">{item.index} · {item.kind}</p>
+              <p class="display h3 m-0 mt-1">{item.name}</p>
+              <p class="small m-0 mt-2 line-clamp-2 text-ink-muted">{item.summary}</p>
+            </div>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <p class="page-grid mt-8">
+    <a class="btn-ghost-text small" href={routes.arbeit}>{work.more}</a>
+  </p>
+</section>

@@ -1,0 +1,118 @@
+{
+  "$comment": "Beispiel-Payloads für Redesigner+Jev-Gates. Keine Keys hier. Lokal: export TYPESAFE_API_KEY=… und POST https://api.typesafe.ai/v1/systemone (model: jev-latest). Jev ist ein Entscheidungsmodell — Propositions, keine Code-Generierung.",
+  "endpoint": "https://api.typesafe.ai/v1/systemone",
+  "model": "jev-latest",
+  "auth": "Authorization: Bearer $TYPESAFE_API_KEY",
+  "never_commit": ["TYPESAFE_API_KEY", "JEV_API_KEY", "api keys", "secrets"],
+  "gates": {
+    "lock": {
+      "purpose": "Schritt 01 — DESIGN.md vollständig mit Werten, bevor UI gebaut wird.",
+      "state": "Type A static portfolio for Klaas Leeck. DESIGN.md committed first. Composition Verzeichnis, grid 8fr/4fr, palette stone paper #E5E0D4 accent #3B6B4F, signature weight-shift, ausbau ausgestattet, card language hairline, icon set Tabler, Du address.",
+      "conditions": [
+        {
+          "id": "type_a",
+          "type": "noul",
+          "proposition": "The lock sheet specifies architecture type A static with no CMS, auth, shop, or generative AI product surface."
+        },
+        {
+          "id": "one_composition",
+          "type": "noul",
+          "proposition": "Exactly one landing composition archetype is locked (Verzeichnis) rather than a generic hero-plus-three-cards skeleton."
+        },
+        {
+          "id": "grid_is_ratio",
+          "type": "noul",
+          "proposition": "The grid is specified as a ratio such as 8fr/4fr, not 1fr 1fr or three equal columns."
+        },
+        {
+          "id": "no_fingerprint_hex",
+          "type": "noul",
+          "proposition": "The accent is not a fingerprint blue/violet/emerald or zinc-950, and not redesigner.lol pink on near-black."
+        },
+        {
+          "id": "named_moment",
+          "type": "noul",
+          "proposition": "A single named signature moment includes build values, fallback, reduced-motion end state, and a mobile rule."
+        }
+      ]
+    },
+    "craft": {
+      "purpose": "Schritt 04 — Ausstattung mit Werten, nicht Nachmittag-Leere.",
+      "state": "Hairline rows, Tabler 1.5px four sizes, process line, FAQ accordion, shine+press CTA, sticky mobile action, initials plate, honest empty proof slots, one dark contact band.",
+      "conditions": [
+        {
+          "id": "one_icon_set",
+          "type": "noul",
+          "proposition": "A single icon set is used with stroke 1.5px and icons that name content rather than sparkles or shields as decoration."
+        },
+        {
+          "id": "one_card_language",
+          "type": "noul",
+          "proposition": "The page uses one card language (hairline) rather than mixing glass-rim and shelf cards."
+        },
+        {
+          "id": "furniture_has_values",
+          "type": "noul",
+          "proposition": "Locked furniture is built with concrete values (padding 0.9rem, 1px rule, CTA shine 3.2s, FAQ 200ms, header blur after 24px)."
+        },
+        {
+          "id": "not_afternoon_empty",
+          "type": "noul",
+          "proposition": "The page is not type-on-a-field only: it has icons, states, a process, FAQ, and a sticky mobile CTA."
+        }
+      ]
+    },
+    "antislop": {
+      "purpose": "Schritt 06 — Median-Tells UND Nachmittags-Tells. Ab 4 Treffern neu entscheiden.",
+      "state": "German Du copy. Three real cases only. Placeholders labeled. No Lenis. No Google Fonts CDN. No ghost word. No three noun feature cards. No fake Trusted by.",
+      "conditions": [
+        {
+          "id": "reskin_test",
+          "type": "noul",
+          "proposition": "Swapping the name and accent would not produce a plausible dentist or crypto-wallet landing; the directory/spec composition is specific to this person."
+        },
+        {
+          "id": "no_agency_median",
+          "type": "noul",
+          "proposition": "The first viewport is not badge plus huge H1 plus paragraph plus filled CTA plus ghost Mehr erfahren, and there is no pink pill on black."
+        },
+        {
+          "id": "no_fake_proof",
+          "type": "noul",
+          "proposition": "There are no invented logos, years, reviews, HRB numbers, or Trusted-by claims."
+        },
+        {
+          "id": "motion_budget",
+          "type": "noul",
+          "proposition": "There is at most one primary wow in the first viewport; prefers-reduced-motion maps to the end state; no Lenis under 768px."
+        }
+      ]
+    },
+    "ship": {
+      "purpose": "Schritt 07 + Build — Legal zum Stack, dist läuft, Config dokumentiert.",
+      "state": "Impressum DDG, Datenschutz lists Netlify/Cloudflare, local fonts, form consent+honeypot or mailto. npm run build emits dist. README in German.",
+      "conditions": [
+        {
+          "id": "legal_matches_stack",
+          "type": "noul",
+          "proposition": "Impressum cites DDG not TMG, Datenschutz lists only processors that actually ship, and there is no dead EU ODR link."
+        },
+        {
+          "id": "form_consent",
+          "type": "noul",
+          "proposition": "The contact form includes a required consent checkbox linking to Datenschutz, a honeypot, and length limits."
+        },
+        {
+          "id": "no_art50_badge",
+          "type": "noul",
+          "proposition": "The site does not claim to be a generative AI product and does not show an Article 50 badge merely because an agent wrote HTML."
+        },
+        {
+          "id": "build_green",
+          "type": "noul",
+          "proposition": "The static build completes and writes to dist for Cloudflare Pages and Netlify."
+        }
+      ]
+    }
+  }
+}

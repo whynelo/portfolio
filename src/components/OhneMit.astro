@@ -1,0 +1,37 @@
+---
+import { ohneMit } from '../data/content';
+---
+
+<section class="ohne-band py-[8.5rem]" aria-labelledby="ohne-mit-title">
+  <div class="page-grid">
+    <div>
+      <p class="label mb-4">{ohneMit.label}</p>
+      <h2 id="ohne-mit-title" class="display pair-title m-0">{ohneMit.title}</h2>
+      <p class="body measure mt-4 text-ink-muted">{ohneMit.lead}</p>
+
+      <div class="ohne-pair mt-10">
+        <article class="plate pair-card">
+          <p class="label mb-5">{ohneMit.ohne.title}</p>
+          <ul class="m-0 list-none p-0">
+            {
+              ohneMit.ohne.items.map((item) => (
+                <li class="pair-row small text-ink-muted">{item}</li>
+              ))
+            }
+          </ul>
+        </article>
+        <article class="plate is-hot pair-card">
+          <p class="label mb-5">{ohneMit.mit.title}</p>
+          <ul class="m-0 list-none p-0">
+            {
+              ohneMit.mit.items.map((item) => (
+                <li class="pair-row small">{item}</li>
+              ))
+            }
+          </ul>
+        </article>
+      </div>
+    </div>
+    <p class="label md:pt-3">{ohneMit.aside}</p>
+  </div>
+</section>

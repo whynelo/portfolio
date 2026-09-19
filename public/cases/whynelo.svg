@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" role="img" aria-labelledby="t d">
+  <title id="t">WhyNelo Methodensystem</title>
+  <desc id="d">Darstellung des sieben-Schritt-Laufs. Kein Produkt-Screenshot, kein oeffentlicher Link.</desc>
+  <rect width="960" height="600" fill="#E5E0D4"/>
+  <rect x="48" y="40" width="864" height="520" fill="#F0EBE0" stroke="#C6BFB0" stroke-width="1"/>
+  <path d="M64 56h12M56 64v12M896 56h-12M904 64v12M64 544h12M56 536v-12M896 544h-12M904 536v-12" stroke="#C6BFB0" stroke-width="1" fill="none"/>
+  <text x="80" y="108" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="600" fill="#1E1B16">WhyNelo</text>
+  <text x="80" y="138" font-family="ui-monospace, monospace" font-size="14" letter-spacing="1.2" fill="#5C574C">METHODE / STUDIO-SYSTEM</text>
+  <line x1="80" y1="162" x2="400" y2="162" stroke="#3B6B4F" stroke-width="2"/>
+  <g font-family="ui-sans-serif, system-ui, sans-serif" font-size="18" fill="#1E1B16">
+    <text x="80" y="214"><tspan fill="#3B6B4F" font-family="ui-monospace, monospace" font-size="14">01</tspan>   Lock</text>
+    <text x="80" y="262"><tspan fill="#3B6B4F" font-family="ui-monospace, monospace" font-size="14">02</tspan>   Viewport</text>
+    <text x="80" y="310"><tspan fill="#3B6B4F" font-family="ui-monospace, monospace" font-size="14">03</tspan>   Rest</text>
+    <text x="80" y="358"><tspan fill="#3B6B4F" font-family="ui-monospace, monospace" font-size="14">04</tspan>   Ausstattung</text>
+    <text x="80" y="406"><tspan fill="#3B6B4F" font-family="ui-monospace, monospace" font-size="14">05</tspan>   Texte</text>
+    <text x="80" y="454"><tspan fill="#3B6B4F" font-family="ui-monospace, monospace" font-size="14">06</tspan>   Anti-Slop</text>
+    <text x="80" y="502"><tspan fill="#3B6B4F" font-family="ui-monospace, monospace" font-size="14">07</tspan>   Legal</text>
+  </g>
+  <g font-family="ui-monospace, monospace" font-size="13" fill="#5C574C">
+    <text x="560" y="214">Nur DESIGN.md</text>
+    <text x="560" y="262">Eine Flaeche</text>
+    <text x="560" y="310">IA, Hero steht</text>
+    <text x="560" y="358">Bausteine, Werte</text>
+    <text x="560" y="406">Deutsch, ohne Nebel</text>
+    <text x="560" y="454">Beide Richtungen</text>
+    <text x="560" y="502">Echter Stack</text>
+  </g>
+  <text x="80" y="548" font-family="ui-monospace, monospace" font-size="12" fill="#5C574C">Darstellung - kein oeffentlicher Link</text>
+</svg>

@@ -1,0 +1,65 @@
+---
+import Still from './Still.astro';
+import { brand } from '../data/brand';
+import { hero } from '../data/content';
+import { cases } from '../data/cases';
+import { routes } from '../data/nav';
+
+const redesigner = cases[0];
+---
+
+<section class="hero relative min-h-[100dvh] overflow-hidden" aria-labelledby="hero-title">
+  <div class="field-ambient" data-field aria-hidden="true">
+    <span class="blob blob-a"></span>
+    <span class="blob blob-b"></span>
+  </div>
+  <div class="hero-vignette" aria-hidden="true"></div>
+
+  <div class="hero-grid relative items-center pt-[14vh] pb-16 md:pt-[16vh] md:pb-24">
+    <div>
+      <p class="label mb-5 text-ink">{hero.kicker}</p>
+      <h1 id="hero-title" class="display h1 m-0">
+        {hero.h1Line1}<br />
+        {hero.h1Line2}<br />
+        <span class="sig"><span class="sig-ink">{hero.h1Mark}</span></span>{hero.h1After}
+      </h1>
+      <p class="body measure mt-6 text-ink-muted">{hero.fact}</p>
+      <div class="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+        <a class="btn-primary" href={routes.anfragen}>
+          <span>{brand.cta}</span>
+        </a>
+        <a class="btn-ghost-text small" href={routes.arbeit}>{hero.skipToWork}</a>
+      </div>
+    </div>
+
+    {
+      redesigner && (
+        <aside class="hero-object">
+          <div class="hero-glow" aria-hidden="true"></div>
+          <div class="hero-peek plate">
+            <Still
+              src={redesigner.still.src}
+              alt={redesigner.still.alt}
+              lqip={redesigner.still.lqip}
+              kind={redesigner.still.kind}
+              eager
+            />
+          </div>
+        </aside>
+      )
+    }
+  </div>
+</section>
+
+<script>
+  const field = document.querySelector('[data-field]');
+  if (field instanceof HTMLElement && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        field.classList.toggle('is-paused', !entry?.isIntersecting);
+      },
+      { threshold: 0 },
+    );
+    io.observe(field);
+  }
+</script>

@@ -1,0 +1,19 @@
+---
+import Base from '../layouts/Base.astro';
+import PageIntro from '../components/PageIntro.astro';
+import Method from '../components/Method.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { method, pageMeta } from '../data/content';
+---
+
+<Base title={pageMeta.methode.title} description={pageMeta.methode.description}>
+  <div class="method-band">
+    <PageIntro kicker={method.label} title={method.titleLead} lead={method.titleRest} aside={method.range} titleId="methode-title" />
+    <div class="page-grid pb-4">
+      <p class="body measure m-0 text-ink-muted">{method.lead}</p>
+      <p class="small m-0 max-w-[24ch] text-ink-muted">{method.aside}</p>
+    </div>
+    <Method />
+  </div>
+  <CtaBand />
+</Base>
